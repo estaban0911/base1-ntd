@@ -61,7 +61,8 @@
                   <a class="nav-link" href="bad_3.html"> base de datos 3</a>
                 </li>
               </ul>
-              
+              <button class="btn btn-sm btn-dark ml-3" onclick="toggleTheme()">🌓 Tema</button>
+
             </div>
           </div>
         </nav>
@@ -71,71 +72,46 @@
   </div>
 
   <!-- service section -->
-  <section class="service_section layout_padding">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 offset-md-2">
-          <h2 class="custom_heading">
-            Our <span>Services</span>
-          </h2>
-          <div class="container layout_padding2">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-1.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    Pet Care
-                  </h6>
-                  <p>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exe
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-2.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    Pet Hotel
-                  </h6>
-                  <p>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exe
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-3.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    Emergency
-                  </h6>
-                  <p>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exe
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <img src="images/tool.png" alt="" class="w-100">
-        </div>
+<section class="ficha_section layout_padding">
+  <div class="container">
+    <h2 class="text-center mb-5">Ficha Técnica del Artículo</h2>
+
+    <div class="card shadow-lg p-4 border-0">
+      <!-- Imagen arriba -->
+      <div class="text-center mb-4">
+        <img src="images/base1.JPG" alt="Imagen del artículo" class="img-fluid rounded" style="max-height: 250px;">
+      </div>
+
+      <!-- Contenido tipo ficha -->
+      <div class="ficha_contenido">
+        <h4 class="mb-3"><strong>Design and Implementation of a Compiled Declarative Language for Game AI Control</strong></h4>
+        <p class="text-muted">
+          Submission received: 5 September 2024 / Revised: 20 November 2024 / Accepted: 23 November 2024 / Published: 27 December 2024 
+        </p>
+<p class="mb-2">
+  <a id="doiLink" href="https://doi.org/10.3390/app15010157" target="_blank">
+    https://doi.org/10.3390/app15010157
+  </a>
+  <button class="btn btn-outline-secondary btn-sm" onclick="copyDOI()">Copiar DOI</button>
+</p>
+
+
+        <h5 class="mt-4"><strong>Autores</strong></h5>
+        <p class="text-muted">F. Calimeri, M. Fink, S. Germano, A. Humenberger, G. Ianni, C. Redl y A. Wimmer</p>
+
+        <h5 class="mt-4"><strong>Abstract</strong></h5>
+        <p class="text-justify">
+   Video games have become one of the most popular forms of entertainment around the world. Currently, agents (bots or non-player characters) are predominantly programmed using procedural and deterministic imperative techniques, which pose significant drawbacks in terms of cost and time efficiency. An interesting and alternative line of work is to develop declarative scripting languages which align the programming task closer to human logic. This allows programmers to intuitively implement agents’ behaviors using straightforward rules. In this regard, most of these languages are interpreted, which may impact performance. Hence, this article presents the design and implementation of a new declarative and compiled scripting language called Obelysk for controlling agents. To test and evaluate the language, a video game was created using the Godot game engine, which allowed us to demonstrate the correct functionality of our scripting language to program the AIs participating in the video game. Finally, an analytics platform was also developed to evaluate the correct behavior of the programmed agents.
+        </p>
+        <h5 class="mt-4"><strong>Keywords</strong></h5>
+        <p class="text-justify">
+  game artificial intelligence; scripting programming language; computer games
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- end service section -->
 
@@ -198,6 +174,7 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+<button id="backToTop" onclick="scrollToTop()" title="Volver arriba">↑</button>
 
 </body>
 

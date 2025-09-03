@@ -595,3 +595,16 @@ a:focus {
     transform: scale(1.05);
     opacity: 0.9;
   }
+
+  #backToTop{
+  position: fixed; right: 20px; bottom: 24px; display: none;
+  border: 0; padding: 10px 12px; border-radius: 8px; 
+  background:#0d6efd; color:#fff; font-weight:600; box-shadow:0 6px 20px rgba(0,0,0,.2);
+}
+#backToTop:hover{ filter:brightness(1.1); }
+
+
+body.dark{ background:#0f172a; color:#e2e8f0; }
+body.dark a{ color:#93c5fd; }
+body.dark .card{ background:#111827; color:#e5e7eb; }
+
